@@ -12,11 +12,12 @@ public class CalculaMedia {
 
         Scanner teclado = new Scanner(System.in);
 
-        for(int i = 1; i <= 4; i++){
+        int quantidadeNotas = 4;
+        for(int i = 1; i <= quantidadeNotas; i++){
             System.out.println("Digite a " + i +"º nota");
             nota = teclado.nextInt();
             somaNotas += nota;
-            if(i == 3)
+            if(i == quantidadeNotas)
                 continue;
             mensagem += nota + " + ";
         }
