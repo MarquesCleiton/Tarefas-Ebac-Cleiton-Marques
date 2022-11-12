@@ -4,28 +4,28 @@ O padrão de projeto Injeção de Dependências, dentre seus muitos benefícios,
 
 Supondo que uma classe A dependa de uma classe B. Poderíamos instanciar B diretamente na declaração:
 ``` java
-	public class A{
-		private B b = new B();
-	}
+public class A{
+	private B b = new B();
+}
 ```
 Mas fazendo isso, criamos um acoplamento que fica difícil de fazer um código modular. Se nossa aplicação conversasse com 3 bancos de dados, teríamos que criar 3 objetos diferentes, onde cada objeto teria suas próprias implementações e padrões distintos. A complexidade de manutenção com o tempo seria cada vez maior.
 
 Poderíamos  deixa a injeção dessa dependência por meio de um construtor ou um método setter, acrescentado de programação orientado a interfaces, onde qualquer implantação da interface B poderia ser utilizada:
 
 ``` java
-	public class A {
-		private IB b;
-		public A(IB b){
-			this.b = b;
-		}
+public class A {
+	private IB b;
+	public A(IB b){
+		this.b = b;
 	}
-	// OU
-	public class A {
-		private IB b;
-		public void setB(IB b){
-			this.b = b;
-		}
+}
+// OU
+public class A {
+	private IB b;
+	public void setB(IB b){
+		this.b = b;
 	}
+}
 
 ```
 Não importando quem chame a classe A, passando como parâmetro um objeto de banco de dados X, Y ou Z que implementa B, o nosso programa, sem precisar fazer qualquer validação de qual banco ele utilizará, ele conseguirá executar sem problemas.
