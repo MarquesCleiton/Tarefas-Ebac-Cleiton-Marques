@@ -10,7 +10,7 @@ public class A{
 ```
 Mas fazendo isso, criamos um acoplamento que fica difícil de fazer um código modular. Se nossa aplicação conversasse com 3 bancos de dados, teríamos que criar 3 objetos diferentes, onde cada objeto teria suas próprias implementações e padrões distintos. A complexidade de manutenção com o tempo seria cada vez maior.
 
-Poderíamos  deixa a injeção dessa dependência por meio de um construtor ou um método setter, acrescentado de programação orientado a interfaces, onde qualquer implantação da interface B poderia ser utilizada:
+Poderíamos  deixa a injeção dessa dependência por meio de um construtor ou um método setter, acrescentado de programação orientado a interfaces, onde qualquer implementação da interface B poderia ser utilizada:
 
 ``` java
 public class A {
